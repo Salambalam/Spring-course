@@ -1,0 +1,21 @@
+# Default ignored files
+/shelf/
+/.idea/workspace.xml
+.idea/
+*.log
+target/
+*.iml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+# Игнорирование файлов, созданных при запуске приложения
+logs/
+tmp/
+
+# Игнорирование файлов, созданных базой данных
+*.db
+*.sql
+*.h2.db
+*.hsql
