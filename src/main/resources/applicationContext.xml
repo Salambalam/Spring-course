@@ -5,12 +5,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     <bean id="musicBean"
-          class="org.example.RapMusic">
-    </bean>
-    <bean id="musicPlayer"
-          class="org.example.MusicPlayer">
-        <property name="music" ref="musicBean" />
-        <property name="name" value="Some name"/>
-        <property name="volume" value="50"/>
+          class="org.example.RapMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+          factory-method="getRapMusic">
     </bean>
 </beans>
