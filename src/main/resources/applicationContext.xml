@@ -11,4 +11,20 @@
           destroy-method="doMyDestroy"
           factory-method="getRapMusic">
     </bean>
+    <bean id="rockMusic"
+          class="org.example.RockMusic">
+    </bean>
+    <bean id="clMusic"
+          class="org.example.ClassicalMusic">
+    </bean>
+    <bean id="musicPlayer"
+          class="org.example.MusicPlayer">
+        <property name="musicArray">
+            <list>
+                <ref bean="musicBean"/>
+                <ref bean="clMusic"/>
+                <ref bean="rockMusic"/>
+            </list>
+        </property>
+    </bean>
 </beans>
