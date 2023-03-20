@@ -5,7 +5,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component
+import java.util.ArrayList;
+
 public class MusicPlayer {
 
     @Value("${musicPlayer.name}")
@@ -21,17 +22,14 @@ public class MusicPlayer {
     @Value("${musicPlayer.volume}")
     private int volume;
 
-    private final Music music;
-    private final Music music1;
-    @Autowired
-    public MusicPlayer(@Qualifier("classicalMusic") Music music, @Qualifier("rockMusic") Music music1){
-        this.music = music;
-        this.music1 = music1;
+    private ArrayList<Music> musics;
+    public MusicPlayer(ArrayList<Music> musics){
+        this.musics = musics;
     }
 
 
     public String playMusic(){
-        return "Playing: " + music.getSong() + ", " + music1.getSong();
+        return "Playing: "  + musics.get((int)(Math.random()*musics.size())).getSong();
     }
 
 }
